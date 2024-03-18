@@ -79,7 +79,7 @@ jobs:
           echo "NEXT_PUBLIC_CLERK_SIGN_UP_URL=${{ secrets.NEXT_PUBLIC_CLERK_SIGN_UP_URL }}" >> .env.production
           echo "NEXT_PUBLIC_CLERK_AFTER_SIGN_IN_URL=${{ secrets.NEXT_PUBLIC_CLERK_AFTER_SIGN_IN_URL }}" >> .env.production
           echo "NEXT_PUBLIC_CLERK_AFTER_SIGN_UP_URL=${{ secrets.NEXT_PUBLIC_CLERK_AFTER_SIGN_UP_URL }}" >> .env.production
-          echo "OPENAI_API_KEY=${{ secrets.OPENAI_API_KEY }}" >> .env.production
+          echo "OPENAI_API_KEY=test-api-key" >> .env.production
           echo "PINECONE_API_KEY=${{ secrets.PINECONE_API_KEY }}" >> .env.production
           echo "DATABASE_URL=${{ secrets.DATABASE_URL }}" >> .env.production
       - name: Install dependencies
@@ -87,6 +87,17 @@ jobs:
 
       - name: Build with Next.js
         run: ${{ steps.detect-package-manager.outputs.runner }} next build
+        # with:
+        #   NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=${{ vars.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY }}
+        #   CLERK_SECRET_KEY=${{ vars.CLERK_SECRET_KEY }}
+        #   NEXT_PUBLIC_CLERK_SIGN_IN_URL=${{ vars.NEXT_PUBLIC_CLERK_SIGN_IN_URL }}
+        #   NEXT_PUBLIC_CLERK_SIGN_UP_URL=${{ vars.NEXT_PUBLIC_CLERK_SIGN_UP_URL }}
+        #   NEXT_PUBLIC_CLERK_AFTER_SIGN_IN_URL=${{ vars.NEXT_PUBLIC_CLERK_AFTER_SIGN_IN_URL }}
+        #   NEXT_PUBLIC_CLERK_AFTER_SIGN_IN_URL=${{ vars.NEXT_PUBLIC_CLERK_AFTER_SIGN_IN_URL }}
+        #   OPENAI_API_KEY=${{ vars.OPENAI_API_KEY }}
+        #   PINECONE_API_KEY=${{ vars.PINECONE_API_KEY }}
+        #   DATABASE_URL=${{ vars.DATABASE_URL }}
+
       - name: Static HTML export with Next.js
         run: ${{ steps.detect-package-manager.outputs.runner }} next export
       - name: Upload artifact
