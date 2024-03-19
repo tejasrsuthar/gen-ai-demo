@@ -14,19 +14,9 @@ export default async function NotesPage() {
 
   if (!userId) throw Error("userId undefined");
 
-  const allNotes = await prisma.note
-    .findMany({ where: { userId } })
-    .catch((e) => {
-      if (e instanceof Prisma.PrismaClientKnownRequestError) {
-        console.log("MAINERROR:", e.code);
-        // The .code property can be accessed in a type-safe manner
-        // if (e.code === "P2002") {
-        //   console.log(
-        //     "There is a unique constraint violation, a new user cannot be created with this email",
-        //   );
-        // }
-      }
-    });
+  const allNotes = await prisma.note.findMany({ where: { userId } });
+
+  console.log("DEBUG_AllNotes", allNotes);
 
   return (
     <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
