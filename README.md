@@ -1,5 +1,7 @@
 
 
+[GenAI Demo](http://www.youtube.com/watch?v=iuNXh-uxgCA)
+
 
 ### Overview:
 Our Advanced Note-Taking App uses cutting-edge technology to enhance the way you capture, organize, and retrieve information. Built with Next.js, it integrates Retrieval-Augmented Generation (RAG), OpenAI API, embeddings, and the Pinecone vector database.
