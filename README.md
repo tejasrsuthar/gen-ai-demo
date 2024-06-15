@@ -4,7 +4,7 @@
 
 
 ### Overview:
-Our Advanced Note-Taking App uses cutting-edge technology to enhance the way you capture, organize, and retrieve information. Built with Next.js, it integrates Retrieval-Augmented Generation (RAG), OpenAI API, embeddings, and the Pinecone vector database.
+Note-Taking App that uses cutting-edge technology to enhance the way you capture, organize, and retrieve information. Built with Next.js, it integrates Retrieval-Augmented Generation (RAG), OpenAI API, embeddings, and the Pinecone vector database.
 
 ### Key Features:
 
